@@ -27,7 +27,7 @@
     			</thead>
     			<tbody>
     			  <tr>
-        				<td>MacAf.ee</td>
+        				<td>McAf.ee</td>
         				<td>Yes</td>
       			</tr> 
       			<tr>
@@ -44,7 +44,17 @@
   			<label for="longUrl">請輸入網址:</label>
   			<input type="text" class="form-control" id="longUrl">
 		</div>
-		<button id="post-url" type="button" class="btn btn-primary active btn-block">送出</button>
+		<div class="form-group">
+			<label for="sel-service">請輸入縮網址服務:</label>
+			<select id="sel-service" class="form-control">
+				<option value="">McAf.ee</option>
+				<option value="">goo.gl</option>
+				<option value="">bit.ly</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<button id="post-url" type="button" class="btn btn-primary active btn-block">送出</button>
+		</div>
 	</div>
 </body>
 </html>
