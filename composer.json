@@ -1,0 +1,6 @@
+{
+    "require": {
+        "lee/service-bundle": "^1.0",
+	 "league/route": "~1.2.3"
+    }
+}
