@@ -1,6 +1,6 @@
 {
     "require": {
         "lee/service-bundle": "^1.0",
-	 "bramus/router": "~1.0"
+	 "hoa/router": "~3.0"
     }
 }
