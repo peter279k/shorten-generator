@@ -27,6 +27,12 @@
 		return $response;
 	});
 
+	$router->addRoute('POST', '/post/url', function (Request $request, Response $response) {
+		// do something clever
+		print_r($request);
+		return $response;
+	});
+
 	$dispatcher = $router->getDispatcher();
 
 	$response = $dispatcher->dispatch('GET', '/');
