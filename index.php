@@ -1,23 +1,12 @@
 <?php
-	require 'vendor/autoload.php';
-	use Symfony\Component\HttpFoundation\Request;
-	use Symfony\Component\HttpFoundation\Response;
+	require __DIR__ . '/vendor/autoload.php';
 
-	$router = new League\Route\RouteCollection;
+	// Create Router instance
+	$router = new \Bramus\Router\Router();
 
-	$router->addRoute('GET', '/', function (Request $request, Response $response) {
-		// do something clever
-		if(file_exists("index.html")) {
-    			echo file_get_contents("index.html");
-		}
-		else {
-			echo "index file not found.";
-		}
-		return $response;
+	// Good
+	$router->get('/hello/(\w+)', function($name) {
+		echo 'Hello ' . htmlentities($name);
 	});
 
-	$dispatcher = $router->getDispatcher();
-
-	$response = $dispatcher->dispatch('GET', '/');
-
-	$response->send();
+	$router -> run();
