@@ -33,7 +33,7 @@ $(function() {
   				'<strong>Oops!</strong>你的短網址(short url): ' + response["data"]["url"] + "</div>";
 				}
 
-				$("#container").append(str);
+				$(".container").append(str);
 			});
 		}
 	});
