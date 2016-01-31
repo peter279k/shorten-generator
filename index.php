@@ -24,4 +24,10 @@
 		return $response;
 	});
 
+	$router->set404(function() {
+		header('HTTP/1.1 404 Not Found');
+		// ... do something special here
+		echo file_get_contents("404.html")
+	});
+
 	$router -> run();
