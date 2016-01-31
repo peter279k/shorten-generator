@@ -21,11 +21,11 @@ $(function() {
 				var str = "";
 				switch($("#sel-service").val()) {
 					case "goo.gl":
-						str = '<div class="form-group alert alert-warning">'+
+						str = '<div class="form-group alert alert-success">'+
   				'你的短網址(short url): ' + response["id"] + "</div>";
   						break;
   					case "bit.ly":
-  						str = '<div class="form-group alert alert-warning">'+
+  						str = '<div class="form-group alert alert-success">'+
   				'你的短網址(short url): ' + response["data"]["url"] + "</div>";
   						break;
   					default:
