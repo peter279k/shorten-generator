@@ -18,6 +18,6 @@
 
 	$dispatcher = $router->getDispatcher();
 
-	$response = $dispatcher->dispatch('GET', '/acme/route');
+	$response = $dispatcher->dispatch('GET', '/');
 
 	$response->send();
