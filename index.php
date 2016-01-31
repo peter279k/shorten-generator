@@ -28,11 +28,28 @@
 		$longUrl = filter_input(INPUT_POST, "longUrl");
 		if(isset($serviceName) && isset($longUrl)) {
 			$key = file_get_contents("auth/key.txt");
-			$config = array(
-        				'service-name' => $serviceName,
-        				'longUrl' => $longUrl,
-        				'apiKey' => $key[$serviceName]
-  			);
+			$key = json_decode($key, true);
+			if($serviceName === "goo.gl") {
+				$config = array(
+        					'service-name' => $serviceName,
+        					'longUrl' => $longUrl,
+        					'apiKey' => $key[$serviceName]
+  				);
+			}
+			else if($serviceName === "bit.ly") {
+				$config = array(
+        					'service-name' => $serviceName,
+        					'longUrl' => $longUrl,
+        					'apiKey' => $key[$serviceName]["apiKey"],
+        					'login' => $key[$serviceName]["login"]
+  				);	
+			}
+			else {
+				$config = array(
+        					'service-name' => $serviceName,
+        					'longUrl' => $longUrl
+  				);
+			}
 
   			$bundle = new  \peter\components\serviceBundle\serviceBundle($config);
   			print_r($bundle -> sendReq());
