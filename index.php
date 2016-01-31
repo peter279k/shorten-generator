@@ -1,6 +1,5 @@
 <?php
 	require_once __DIR__ . '/vendor/autoload.php';
-	
 	$router = new \Bramus\Router\Router();
 
 	$router -> get('/', function() {
@@ -28,12 +27,14 @@
 		$serviceName = filter_input(INPUT_POST, "sel-service");
 		$longUrl = filter_input(INPUT_POST, "longUrl");
 		if(isset($serviceName) && isset($longUrl)) {
+			$key = file_get_contents("auth/key.txt");
 			$config = array(
         				'service-name' => $serviceName,
-        				'longUrl' => $longUrl
+        				'longUrl' => $longUrl,
+        				'apiKey' => $key[$serviceName]
   			);
 
-  			$bundle = new \peter\components\serviceBundle($config);
+  			$bundle = new  \peter\components\serviceBundle\serviceBundle($config);
   			print_r($bundle -> sendReq());
 		}
 		else {
