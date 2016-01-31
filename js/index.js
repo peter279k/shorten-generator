@@ -26,7 +26,7 @@ $(function() {
   						break;
   					case "bit.ly":
   						str = '<div class="form-group alert alert-warning">'+
-  				'你的短網址(short url): ' + response["url"] + "</div>";
+  				'你的短網址(short url): ' + response["data"]["url"] + "</div>";
   						break;
   					default:
   						str = '<div class="form-group alert alert-success">'+
