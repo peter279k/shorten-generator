@@ -22,15 +22,15 @@ $(function() {
 				switch($("#sel-service").val()) {
 					case "goo.gl":
 						str = '<div class="form-group alert alert-warning">'+
-  				'<strong>Oops!</strong>你的短網址(short url): ' + response["id"] + "</div>";
+  				'你的短網址(short url): ' + response["id"] + "</div>";
   						break;
   					case "bit.ly":
   						str = '<div class="form-group alert alert-warning">'+
-  				'<strong>Oops!</strong>你的短網址(short url): ' + response["url"] + "</div>";
+  				'你的短網址(short url): ' + response["url"] + "</div>";
   						break;
   					default:
   						str = '<div class="form-group alert alert-success">'+
-  				'<strong>Oops!</strong>你的短網址(short url): ' + response["data"]["url"] + "</div>";
+  				'你的短網址(short url): ' + response["data"]["url"] + "</div>";
 				}
 
 				$(".container").append(str);
