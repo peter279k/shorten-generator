@@ -16,6 +16,17 @@
 		return $response;
 	});
 
+	$router->addRoute('GET', '/js/index.js', function (Request $request, Response $response) {
+		// do something clever
+		if(file_exists("index.js")) {
+    			echo file_get_contents("index.js");
+		}
+		else {
+			echo "index.js file not found.";
+		}
+		return $response;
+	});
+
 	$dispatcher = $router->getDispatcher();
 
 	$response = $dispatcher->dispatch('GET', '/');
