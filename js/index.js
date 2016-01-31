@@ -15,6 +15,7 @@ $(function() {
 				"longUrl":$("#longUrl").val(),
 				"sel-service":$("#sel-service").val()
 			};
+			
 			$.post("/shorten-generator/post/url", data, function(response) {
 				console.log(response);
 			});

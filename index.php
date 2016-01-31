@@ -24,10 +24,27 @@
 		return $response;
 	});
 
+	$router -> post('/post/url', function() {
+		$serviceName = filter_input(INPUT_POST, "sel-service");
+		$longUrl = filter_input(INPUT_POST, "longUrl");
+		if(isset($serviceName) && isset($longUrl)) {
+			$config = array(
+        				'service-name' => $serviceName,
+        				'longUrl' => $longUrl
+  			);
+
+  			$bundle = new \peter\components\serviceBundle($config);
+  			print_r($bundle -> sendReq());
+		}
+		else {
+			echo "Oops ! no data input";
+		}
+	});
+
 	$router->set404(function() {
 		header('HTTP/1.1 404 Not Found');
 		// ... do something special here
-		echo file_get_contents("404.html")
+		echo file_get_contents("404.html");
 	});
 
 	$router -> run();
