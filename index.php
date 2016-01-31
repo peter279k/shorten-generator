@@ -52,7 +52,7 @@
 			}
 
   			$bundle = new  \peter\components\serviceBundle\serviceBundle($config);
-  			print_r($bundle -> sendReq());
+  			echo json_encode($bundle -> sendReq());
 		}
 		else {
 			echo "Oops ! no data input";
