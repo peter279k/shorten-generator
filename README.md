@@ -1,3 +1,3 @@
 # shorten-generator
-shorten url generato
+shorten url generator
 ##短網址產生器
